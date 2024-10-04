@@ -1,0 +1,10 @@
+bash
+#!/bin/bash
+
+URL="http://your-application-url"
+HTTP_RESPONSE=$(curl --write-out "%{http_code}\n" --silent --output /dev/null $URL)
+
+if [ $HTTP_RESPONSE -eq 200 ]; then
+  echo "Application is UP"
+else
+  echo "Application
